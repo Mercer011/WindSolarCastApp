@@ -16,59 +16,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".DashBoard"
+            android:exported="true" />
+        <activity
             android:name=".Graph2"
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
             android:exported="true" />
-        <activity
-            android:name=".GraphData"
-            android:exported="false" />
-        <activity
-            android:name=".ApiService"
-            android:exported="false" />
-        <activity
-            android:name=".RetrofitClient"
-            android:exported="false" />
-        <activity
-            android:name=".Graphs2"
-            android:exported="false" />
-        <activity
-            android:name=".GraphsMain"
-            android:exported="true" />
-        <activity
-            android:name=".NasaPowerResponse"
-            android:exported="false" />
-        <activity
-            android:name=".NasaPowerApiService"
-            android:exported="false" />
+
         <activity
             android:name=".RenewableEnergyResponse"
             android:exported="false" />
-        <activity
-            android:name=".ClimatiqApiService"
-            android:exported="false" />
-        <activity
-            android:name=".SolarAnywhereResponse"
-            android:exported="false" />
-        <activity
-            android:name=".SolarAnywhereApiService"
-            android:exported="false" />
-        <activity
-            android:name=".SolarResponse"
-            android:exported="false" />
-        <activity
-            android:name=".SolarApiService"
-            android:exported="false" />
-        <activity
-            android:name=".WeatherResponse"
-            android:exported="false" />
-        <activity
-            android:name=".WeatherApiService"
-            android:exported="false" />
-        <activity
-            android:name=".Weatherdata"
-            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

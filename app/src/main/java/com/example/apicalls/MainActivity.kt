@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity() {
     private val WEATHER_BASE_URL = "https://api.openweathermap.org/data/2.5/"
     private val NASA_BASE_URL = "https://power.larc.nasa.gov/"
 
+    private val DEFAULT_CITY = "Jalandhar"
+    private val DEFAULT_LAT = 31.3260
+    private val DEFAULT_LON = 75.5762
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,30 +73,36 @@ class MainActivity : AppCompatActivity() {
         tvWindPowerPotential = findViewById(R.id.tvWindPowerPotential)
         ivWindPowerPotentialImage = findViewById(R.id.ivWindPowerPotentialImage)
 
-        // Set initial visibility to gone
-        tvTemperature.visibility = View.GONE
-        ivTemperatureImage.visibility = View.GONE
-        tvWindSpeed.visibility = View.GONE
-        ivWindSpeedImage.visibility = View.GONE
-        tvCloudCover.visibility = View.GONE
-        ivCloudCoverImage.visibility = View.GONE
-        tvSolarRadiation.visibility = View.GONE
-        ivSolarRadiationImage.visibility = View.GONE
-        tvClearSkySolarRadiation.visibility = View.GONE
-        ivClearSkySolarRadiationImage.visibility = View.GONE
-        tvLongwaveRadiation.visibility = View.GONE
-        ivLongwaveRadiationImage.visibility = View.GONE
-        tvTopAtmosphereSolarRadiation.visibility = View.GONE
-        ivTopAtmosphereSolarRadiationImage.visibility = View.GONE
-        tvSolarEnergyPotential.visibility = View.GONE
-        ivSolarEnergyPotentialImage.visibility = View.GONE
-        tvWindPowerPotential.visibility = View.GONE
-        ivWindPowerPotentialImage.visibility = View.GONE
+//        // Set initial visibility to gone
+//        tvTemperature.visibility = View.GONE
+//        ivTemperatureImage.visibility = View.GONE
+//        tvWindSpeed.visibility = View.GONE
+//        ivWindSpeedImage.visibility = View.GONE
+//        tvCloudCover.visibility = View.GONE
+//        ivCloudCoverImage.visibility = View.GONE
+//        tvSolarRadiation.visibility = View.GONE
+//        ivSolarRadiationImage.visibility = View.GONE
+//        tvClearSkySolarRadiation.visibility = View.GONE
+//        ivClearSkySolarRadiationImage.visibility = View.GONE
+//        tvLongwaveRadiation.visibility = View.GONE
+//        ivLongwaveRadiationImage.visibility = View.GONE
+//        tvTopAtmosphereSolarRadiation.visibility = View.GONE
+//        ivTopAtmosphereSolarRadiationImage.visibility = View.GONE
+//        tvSolarEnergyPotential.visibility = View.GONE
+//        ivSolarEnergyPotentialImage.visibility = View.GONE
+//        tvWindPowerPotential.visibility = View.GONE
+//        ivWindPowerPotentialImage.visibility = View.GONE
+
+
+        fetchWeatherData(DEFAULT_CITY, DEFAULT_LAT, DEFAULT_LON)
+        val tvDefaultCity: TextView = findViewById(R.id.tvDefaultCity)
+
 
         btnSearch.setOnClickListener {
             val city = etCity.text.toString().trim()
+
             if (city.isNotEmpty()) {
-                fetchWeatherData(city)
+                fetchWeatherData(city, DEFAULT_LAT, DEFAULT_LON)
             } else {
                 tvTemperature.text = "Please enter a city name"
             }
@@ -112,7 +122,7 @@ class MainActivity : AppCompatActivity() {
             .build()
     }
 
-    private fun fetchWeatherData(city: String) {
+    private fun fetchWeatherData(city: String, DEFAULT_LAT: Double, DEFAULT_LON: Double) {
         val retrofit = createRetrofitClient(WEATHER_BASE_URL)
         val apiService = retrofit.create(WeatherApiService::class.java)
         apiService.getWeather(city, WEATHER_API_KEY, "metric")
@@ -130,7 +140,7 @@ class MainActivity : AppCompatActivity() {
                             fetchSolarAndWindData(28.61, 77.23, windSpeed, cloudCover) // Example for Delhi
                             tvTemperature.text = "Temperature: $temperature°C"
                             tvWindSpeed.text = "Wind Speed: $windSpeed m/s"
-                            tvCloudCover.text = "Cloud Cover: $cloudCover%"
+                            tvCloudCover.text = "Current Cloud Cover: $cloudCover%"
 
                             // Set images based on temperature
                             if (temperature > 30) {
@@ -142,12 +152,12 @@ class MainActivity : AppCompatActivity() {
                             }
 
                             // Set visibility to visible
-                            tvTemperature.visibility = View.VISIBLE
-                            ivTemperatureImage.visibility = View.VISIBLE
-                            tvWindSpeed.visibility = View.VISIBLE
-                            ivWindSpeedImage.visibility = View.VISIBLE
-                            tvCloudCover.visibility = View.VISIBLE
-                            ivCloudCoverImage.visibility = View.VISIBLE
+//                            tvTemperature.visibility = View.VISIBLE
+//                            ivTemperatureImage.visibility = View.VISIBLE
+//                            tvWindSpeed.visibility = View.VISIBLE
+//                            ivWindSpeedImage.visibility = View.VISIBLE
+//                            tvCloudCover.visibility = View.VISIBLE
+//                            ivCloudCoverImage.visibility = View.VISIBLE
                         }
                     } else {
                         val errorBody = response.errorBody()?.string() ?: "Unknown error"
