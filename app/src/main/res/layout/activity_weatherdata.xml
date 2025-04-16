@@ -8,19 +8,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp">
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewSearch"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardPreventCornerOverlap="true">
 
         <LinearLayout
             android:layout_width="349dp"
+
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -80,7 +81,7 @@
             android:id="@+id/gridLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
+            android:columnCount="1"
             android:rowCount="5"
             android:layout_marginTop="20dp"
             android:padding="10dp"
@@ -92,12 +93,13 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
+                android:alpha="0.7"
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -124,6 +126,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
+                android:alpha="0.7"
+
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="true">
 
@@ -156,6 +160,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
+                android:alpha="0.7"
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="true">
 
@@ -188,6 +193,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
+                android:alpha="0.7"
+
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="true">
 
@@ -221,6 +228,8 @@
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp"
+                android:alpha="0.7"
+
                 app:cardPreventCornerOverlap="true">
 
                 <LinearLayout
@@ -252,6 +261,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
+                android:alpha="0.7"
+
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="true">
 
@@ -284,6 +295,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
+                android:alpha="0.7"
+
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="true">
 
@@ -316,6 +329,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
+                android:alpha="0.7"
+
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="true">
 
@@ -348,6 +363,8 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 app:cardCornerRadius="8dp"
+                android:alpha="0.7"
+
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="true">
 

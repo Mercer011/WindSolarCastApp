@@ -2,8 +2,8 @@
     <!-- Background of the ProgressBar -->
     <item android:id="@android:id/background">
         <shape>
-            <corners android:radius="2dp"/>
-            <solid android:color="#D3D3D3"/> <!-- Light Gray Background -->
+            <corners android:radius="10dp"/>
+            <solid android:color="#D3D3D3"/>
         </shape>
     </item>
 
@@ -11,8 +11,8 @@
     <item android:id="@android:id/progress">
         <clip>
             <shape>
-                <corners android:radius="2dp"/>
-                <solid android:color="#A5E25B"/> <!-- White Progress -->
+                <corners android:radius="10dp"/>
+                <solid android:color="#abd50a"/>
             </shape>
         </clip>
     </item>

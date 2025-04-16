@@ -5,6 +5,7 @@ import NasaPowerResponse
 import WeatherApiService
 import WeatherResponse
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -50,6 +51,9 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        
         setContentView(R.layout.activity_weatherdata)
 
         etCity = findViewById(R.id.etCity)
@@ -73,27 +77,6 @@ class MainActivity : AppCompatActivity() {
         tvWindPowerPotential = findViewById(R.id.tvWindPowerPotential)
         ivWindPowerPotentialImage = findViewById(R.id.ivWindPowerPotentialImage)
 
-//        // Set initial visibility to gone
-//        tvTemperature.visibility = View.GONE
-//        ivTemperatureImage.visibility = View.GONE
-//        tvWindSpeed.visibility = View.GONE
-//        ivWindSpeedImage.visibility = View.GONE
-//        tvCloudCover.visibility = View.GONE
-//        ivCloudCoverImage.visibility = View.GONE
-//        tvSolarRadiation.visibility = View.GONE
-//        ivSolarRadiationImage.visibility = View.GONE
-//        tvClearSkySolarRadiation.visibility = View.GONE
-//        ivClearSkySolarRadiationImage.visibility = View.GONE
-//        tvLongwaveRadiation.visibility = View.GONE
-//        ivLongwaveRadiationImage.visibility = View.GONE
-//        tvTopAtmosphereSolarRadiation.visibility = View.GONE
-//        ivTopAtmosphereSolarRadiationImage.visibility = View.GONE
-//        tvSolarEnergyPotential.visibility = View.GONE
-//        ivSolarEnergyPotentialImage.visibility = View.GONE
-//        tvWindPowerPotential.visibility = View.GONE
-//        ivWindPowerPotentialImage.visibility = View.GONE
-
-
         fetchWeatherData(DEFAULT_CITY, DEFAULT_LAT, DEFAULT_LON)
         val tvDefaultCity: TextView = findViewById(R.id.tvDefaultCity)
 
@@ -103,6 +86,7 @@ class MainActivity : AppCompatActivity() {
 
             if (city.isNotEmpty()) {
                 fetchWeatherData(city, DEFAULT_LAT, DEFAULT_LON)
+                tvDefaultCity.text = city
             } else {
                 tvTemperature.text = "Please enter a city name"
             }
@@ -249,6 +233,7 @@ class MainActivity : AppCompatActivity() {
                 }
             })
     }
+
 
     private fun calculateSolarPower(ghi: Double, cloudCover: Int, panelArea: Double = 1.5, efficiency: Double = 0.18): Double {
         return ghi * (1 - cloudCover / 100.0) * panelArea * efficiency

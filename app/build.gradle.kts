@@ -71,4 +71,19 @@ dependencies {
 
     // ✅ OkHttp Logging Interceptor (For API Logging)
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.firebase:firebase-auth:22.1.2")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation("com.airbnb.android:lottie:6.3.0")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
+    // ✅ Google Maps SDK
+    implementation("com.google.android.gms:play-services-maps:18.2.0")  // Added this line
 }
